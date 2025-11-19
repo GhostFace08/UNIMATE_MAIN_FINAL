@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UniMate Design System - Student-focused AI Assistant */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 250 100% 99%;
+    --foreground: 230 15% 15%;
+
+    /* Brand colors - University inspired */
+    --primary: 245 85% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 245 90% 70%;
+    --primary-dark: 245 90% 45%;
+
+    /* Secondary - Success green for finance */
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 70% 50%;
+
+    /* Accent - Warm purple for career */
+    --accent: 270 70% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 270 65% 75%;
+
+    /* Academic - Orange for academics */
+    --academic: 25 95% 53%;
+    --academic-foreground: 0 0% 100%;
+    --academic-light: 25 90% 65%;
+
+    /* UI colors */
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 15%;
+
+    --muted: 245 20% 96%;
+    --muted-foreground: 230 10% 50%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 245 15% 90%;
+    --input: 245 15% 90%;
+    --ring: 245 85% 58%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-academic: linear-gradient(135deg, hsl(var(--academic)), hsl(var(--academic-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px hsl(var(--primary) / 0.1);
+    --shadow-md: 0 4px 12px hsl(var(--primary) / 0.15);
+    --shadow-lg: 0 8px 25px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+
+    /* Spacing */
+    --radius: 12px;
+  }
+
+  .dark {
+    /* Dark mode - keeping minimal for now */
+    --background: 230 15% 8%;
+    --foreground: 250 100% 98%;
+    --card: 230 15% 10%;
+    --card-foreground: 250 100% 98%;
+    --muted: 230 15% 15%;
+    --muted-foreground: 230 10% 70%;
+    --border: 230 15% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom utility classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-academic {
+    background: var(--gradient-academic);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animation classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
